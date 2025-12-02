@@ -62,7 +62,7 @@ export default function GameRoom({
                             }
                         />
                         <small className="helper-text">
-                            La cantidad de impostores no puede ser mayor a la mitad de los jugadores
+                            La cantidad de impostores no puede ser mayor que la cantidad de jugadores
                         </small>
                     </div>
 
