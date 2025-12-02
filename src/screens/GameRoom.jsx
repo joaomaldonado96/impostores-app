@@ -51,7 +51,7 @@ export default function GameRoom({
 
                     <div className="form-group">
                         <label>Número de impostores</label>
-                        <select
+                        <select class="btn"
                             disabled={players.length < 5}
                             value={numImpostors}
                             onChange={(e) => setNumImpostors(+e.target.value)}
