@@ -51,16 +51,20 @@ export default function GameRoom({
 
                     <div className="form-group">
                         <label>Número de impostores</label>
-                        <input
-                            type="number"
-                            min="1"
+                        <select
                             disabled={players.length < 5}
-                            max={players.length < 5 ? 0 : Math.floor((players.length - 1) / 2)}
                             value={numImpostors}
-                            onChange={(e) =>
-                                setNumImpostors(Math.min(Math.max(1, +e.target.value), players.length - 1 || 1))
-                            }
-                        />
+                            onChange={(e) => setNumImpostors(+e.target.value)}
+                        >
+                            {Array.from(
+                                { length: Math.floor(players.length - 1) },
+                                (_, i) => i + 1
+                            ).map((num) => (
+                                <option key={num} value={num}>
+                                    {num}
+                                </option>
+                            ))}
+                        </select>
                         <small className="helper-text">
                             La cantidad de impostores no puede ser mayor que la cantidad de jugadores
                         </small>
